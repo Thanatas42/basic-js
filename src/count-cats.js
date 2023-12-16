@@ -18,9 +18,9 @@ function countCats(matrix) {
   let count = 0;
 
   matrix.forEach((item, index) => {
-      let found = item.filter((it) => {
-          return it === '^^';
-      })
+    let found = item.filter((it) => {
+      return it === '^^';
+    })
     count += found.length;
   });
 
