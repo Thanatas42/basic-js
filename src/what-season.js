@@ -12,27 +12,26 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
-  if (!date)
+  if (date === undefined) {
     return 'Unable to determine the time of year!';
-  else if (!(typeof date.getTime === 'function'))
+  }
+  try {
+    date.getTime()
+  } catch {
     throw new Error('Invalid date!');
+  }
 
-  let result;
-  const seasons = [[1, 2, 12], [3, 4, 5], [6, 7, 8], [9, 10, 11]];
+  const month = date.getMonth();
 
-  seasons.forEach((item, index) => {
-    if (item.includes(date.getMonth() + 1))
-      result = index;
-  })
-
-  if (result === 0)
+  if (month < 2 || month == 11) {
     return 'winter';
-  else if (result === 1)
+  } else if (month < 5) {
     return 'spring';
-  else if (result === 2)
+  } else if (month < 8) {
     return 'summer';
-  else if (result === 3)
+  } else {
     return 'autumn';
+  }
 }
 
 module.exports = {
