@@ -15,7 +15,7 @@ function sortByHeight(arr) {
   let resultArr = arr.filter((item) => {
     return item !== -1;
   })
-  console.log(resultArr);
+  
   resultArr.sort((a, b) => {
     if (a < b)
       return -1;

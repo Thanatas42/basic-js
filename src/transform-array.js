@@ -40,8 +40,8 @@ function transform(arr) {
       }
     }
   });
-  console.log(result)
-  return result.filter((item, index) => {
+  
+  return result.filter((item) => {
     return !(item.remove === true || commands.includes(item));
   });
 }

@@ -25,7 +25,6 @@ function repeater(str, options) {
   }
 
   const addition = generateStr(options.addition, options.additionSeparator ? options.additionSeparator : '|', options.additionRepeatTimes);
-  console.log(addition);
   const result = generateStr(str + addition, options.separator, options.repeatTimes);
 
   return result;
